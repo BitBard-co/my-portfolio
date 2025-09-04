@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Hobbies</title>
+  <title>My Portfolio</title>
   <style>
     body {
       margin: 0;
@@ -24,6 +24,7 @@
       border-radius: 10px;
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
 
     h2 {
@@ -32,6 +33,7 @@
       color: #2563eb;
     }
 
+    /* Hobbies */
     .hobbies {
       display: grid;
       gap: 16px;
@@ -52,16 +54,90 @@
         align-items: start;
       }
     }
+
+    /* CV Section */
+    .cv {
+      background: #f0f4ff;
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .cv h2 {
+      margin-top: 0;
+    }
+
+    .cv-intro {
+      margin: 6px 0 14px;
+      color: #445;
+    }
+
+    .cv-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .cv-list li + li {
+      margin-top: 10px;
+    }
+
+    /* Spotify Bonus Section */
+    .spotify {
+      background: #e8f7ee;
+      border: 1px solid #c8ebd6;
+    }
+    .spotify h2 {
+      color: #157347;
+    }
+    .spotify p {
+      margin-top: 0;
+      color: #2b4d3a;
+    }
+    .spotify .player {
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    /* Weather Bonus Section */
+    .weather {
+      background: #fff7e6;
+      border: 1px solid #ffe2b7;
+    }
+    .weather h2 {
+      color: #b45309;
+    }
+    .weather .panel {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+    }
+    .weather .temp {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .weather small {
+      color: #6b7280;
+    }
+    .muted {
+      color: #6b7280;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <main class="container">
+    <!-- Hobbies Section -->
     <section class="card">
       <h2>My Hobbies</h2>
       <p>Here are a few things I enjoy doing in my free time:</p>
 
       <div class="hobbies">
-        <!-- Text column -->
         <div>
           <ul class="hobby-list">
             <li>🎮 Gaming</li>
@@ -69,8 +145,6 @@
             <li>💪 Working out</li>
           </ul>
         </div>
-
-        <!-- Image column -->
         <div>
           <img
             class="hobby-image"
@@ -80,6 +154,127 @@
         </div>
       </div>
     </section>
+
+    <!-- CV Section -->
+    <section class="cv">
+      <h2>Experience</h2>
+      <p class="cv-intro">
+        A quick overview of my background—customer-focused roles in finance and healthcare travel,
+        plus hands-on programming as a hobby.
+      </p>
+      <ul class="cv-list">
+        <li>
+          <strong>Account Manager – Banking Accounts</strong><br>
+          Managed client portfolios, opened and maintained accounts, resolved issues, and coordinated
+          with compliance. Focus on clear communication, accuracy, and trust.
+        </li>
+        <li>
+          <strong>Floor Manager – Medical Tourism Company</strong><br>
+          Led day-to-day operations on site: patient check-ins, scheduling with clinics,
+          coordination with international partners, and ensuring service quality on the floor.
+          Trained staff and handled escalations calmly.
+        </li>
+        <li>
+          <strong>Hobby Programmer (C/C++ & Web)</strong><br>
+          Built small utilities and web pages, learned by experimenting, used Git/GitHub,
+          and practiced problem solving with WSL, VS Code, and Makefiles.
+        </li>
+        <li>
+          <strong>Customer Service & Operations</strong><br>
+          Multi-year experience communicating with customers, prioritizing tasks,
+          and improving workflows across teams.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Why This Education Section -->
+    <section class="card">
+      <h2>Why I Chose This Education</h2>
+      <p>
+        I chose to study system development because I enjoy problem solving and building 
+        solutions that are both useful and creative. Programming started as a hobby for me, 
+        and now I want to turn it into a career.
+      </p>
+      <p>
+        My goal is to work as a software developer, with a focus on building reliable 
+        applications and growing my technical skills step by step.
+      </p>
+      <p>
+        One company in my city that inspires me is 
+        <a href="https://www.ericsson.com/en" target="_blank" rel="noopener noreferrer">Ericsson</a>,
+        known for technology and innovation in Sweden.
+      </p>
+    </section>
+
+    <!-- Bonus 1: Spotify Embed -->
+    <section class="card spotify">
+      <h2>My Current Soundtrack</h2>
+      <p class="muted">Embedded directly from Spotify.</p>
+      <div class="player">
+        <!-- Your embed code -->
+        <iframe data-testid="embed-iframe" style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/7CyPwkp0oE8Ro9Dd5CUDjW?utm_source=generator"
+          width="100%" height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- Bonus 2: Weather (OpenWeatherMap) -->
+    <section class="card weather">
+      <h2>Weather in My City</h2>
+      <p class="muted">Live weather using OpenWeatherMap (via fetch + emoji).</p>
+      <div class="panel">
+        <div id="weather-emoji" aria-hidden="true">⛅</div>
+        <div>
+          <div class="temp" id="weather-temp">--°C</div>
+          <div id="weather-desc">Loading...</div>
+          <small id="weather-city">City: Örebro</small>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Weather Script -->
+  <script>
+    const CITY = "Örebro"; 
+    const API_KEY = "dce5074b5f19d3b1969f7c4e7207b458"; 
+    const UNITS = "metric";
+
+    function iconFor(main) {
+      const m = (main || "").toLowerCase();
+      if (m.includes("clear")) return "☀️";
+      if (m.includes("cloud")) return "☁️";
+      if (m.includes("rain")) return "🌧️";
+      if (m.includes("drizzle")) return "🌦️";
+      if (m.includes("thunder")) return "⛈️";
+      if (m.includes("snow")) return "❄️";
+      if (m.includes("mist") || m.includes("fog") || m.includes("haze")) return "🌫️";
+      return "⛅";
+    }
+
+    async function loadWeather() {
+      try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(CITY)}&units=${UNITS}&appid=${API_KEY}`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Network response was not ok");
+        const data = await res.json();
+
+        const temp = Math.round(data.main.temp);
+        const main = data.weather && data.weather[0] ? data.weather[0].main : "";
+        const desc = data.weather && data.weather[0] ? data.weather[0].description : "";
+
+        document.getElementById("weather-temp").textContent = `${temp}°C`;
+        document.getElementById("weather-desc").textContent = desc ? desc[0].toUpperCase() + desc.slice(1) : "—";
+        document.getElementById("weather-emoji").textContent = iconFor(main);
+        document.getElementById("weather-city").textContent = `City: ${CITY}`;
+      } catch (err) {
+        document.getElementById("weather-desc").textContent = "Could not load weather.";
+        console.error(err);
+      }
+    }
+
+    loadWeather();
+  </script>
 </body>
 </html>
