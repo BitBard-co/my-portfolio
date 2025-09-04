@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Hobbies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7fafc;
+      color: #1a202c;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+      color: #2563eb;
+    }
+
+    .hobbies {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hobby-list {
+      padding-left: 20px;
+    }
+
+    .hobby-image {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    @media (min-width: 720px) {
+      .hobbies {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h2>My Hobbies</h2>
+      <p>Here are a few things I enjoy doing in my free time:</p>
+
+      <div class="hobbies">
+        <!-- Text column -->
+        <div>
+          <ul class="hobby-list">
+            <li>🎮 Gaming</li>
+            <li>🌲 Going out in nature</li>
+            <li>💪 Working out</li>
+          </ul>
+        </div>
+
+        <!-- Image column -->
+        <div>
+          <img
+            class="hobby-image"
+            src="hobby.jpg"
+            alt="An image representing my hobbies: gaming, nature, and working out"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
